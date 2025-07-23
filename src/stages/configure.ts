@@ -11,8 +11,10 @@ export const configure = async () => {
 		const token = core.getInput("token");
 		const skipUse = core.getInput("skip-use");
 
+    const originToken = core.getInput("origin-token");
+
 		core.info("Logging in to Attic cache");
-		await exec("attic", ["login", "--set-default", cache, endpoint, token]);
+		await exec("attic", ["login", "--set-default", cache, endpoint, token, originToken]);
 
 		if (skipUse === "true") {
 			core.info("Not adding Attic cache to substituters as skip-use is set to true");

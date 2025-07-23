@@ -25,6 +25,9 @@ inputs:
   skip-use:
     description: "Set to true to skip using Attic cache as a substituter"
     required: false
+  origin-token:
+    description: "Cloudflare origin token"
+    required: false
 
 runs:
   using: "node20"
